@@ -1,0 +1,40 @@
+Windows Registry Editor Version 5.00
+
+; ============================================================
+;  KiTTY Protocol Handler
+;  CQ Simple LLC - Master Portal SSH Integration
+;
+;  Registers a "kitty://" URL protocol so that clicking an SSH
+;  link on the Master Instances page (e.g.
+;  kitty://root@192.168.1.50) launches KiTTY directly with that
+;  host pre-filled.
+;
+;  KiTTY is a PuTTY fork with built-in WinSCP integration -
+;  once connected, use the system menu (top-left icon on the
+;  title bar) or Ctrl+Alt+F2 to launch WinSCP for the same host.
+;
+;  INSTALL:
+;    1. Copy kitty_handler.bat to C:\PuttyHandler\kitty_handler.bat
+;       (or edit the path below to match your location)
+;    2. Edit kitty_handler.bat if KiTTY is not at
+;       C:\Program Files\KiTTY\kitty.exe
+;    3. Double-click this .reg file
+;    4. Click "Yes" to confirm the registry change
+;
+;  After install, the browser will ask once whether to allow
+;  "kitty://" links - check "Always allow" to avoid future prompts.
+; ============================================================
+
+[HKEY_CLASSES_ROOT\kitty]
+@="URL:KiTTY Protocol"
+"URL Protocol"=""
+
+[HKEY_CLASSES_ROOT\kitty\DefaultIcon]
+@="C:\\\\Program Files\\\\KiTTY\\\\kitty.exe,0"
+
+[HKEY_CLASSES_ROOT\kitty\shell]
+
+[HKEY_CLASSES_ROOT\kitty\shell\open]
+
+[HKEY_CLASSES_ROOT\kitty\shell\open\command]
+@="\"C:\\\\PuttyHandler\\\\kitty_handler.bat\" \"%1\""
