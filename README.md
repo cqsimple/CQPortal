@@ -58,6 +58,8 @@ Remote VPS systems should allow: `ufw allow from 207.148.10.72 to any port 80`
 ## SSH Access (Admin Team Only)
 
 The Master Instances page includes SSH buttons (Vultr instances + on-prem
+
+The Kitty files go on the usre PC.  the .bat file needs the path for kitty.exe at the end of the file.  The .reg file needs to be run once on the windows machine
 systems) using a `kitty://` custom protocol. See `client-tools/` for the
 one-time Windows setup per team member.
 
